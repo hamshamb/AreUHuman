@@ -154,3 +154,7 @@ Reload while online and confirm the service-worker cache name was incremented fo
 ### The terminal must be reset
 
 Use operator controls for targeted record/statistics clearing, or clear the site's browser storage to return to first-run commissioning.
+
+## License
+
+AreUHuman is available under the [MIT License](LICENSE). Copyright (c) 2026 hamshamb.
