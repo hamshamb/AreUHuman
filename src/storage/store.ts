@@ -1,7 +1,8 @@
 import { DEFAULT_SETTINGS } from '../game/config'
 import type { ChallengeMetrics, ChallengeResult, ChallengeStats, GameSettings, LeaderboardEntry, PersistedData, PrizeTier, ScoreBand, SessionPerformance } from '../game/types'
 
-const STORAGE_KEY = 'human-verification:data:v1'
+const STORAGE_KEY = 'are-u-human:data:v1'
+const PREVIOUS_STORAGE_KEY = 'human-verification:data:v1'
 const LEGACY_STORAGE_KEY = 'touch-test-99:data:v1'
 
 type UnknownRecord = Record<string, unknown>
@@ -64,7 +65,7 @@ export function normalizeSettings(value: unknown): GameSettings {
   const rawPin = typeof source.adminPin === 'string' || typeof source.adminPin === 'number' ? String(source.adminPin) : DEFAULT_SETTINGS.adminPin
   const adminPin = rawPin.replace(/\D/g, '').slice(0, 8) || DEFAULT_SETTINGS.adminPin
   return {
-    title: title === 'TOUCH TEST: 99%' ? DEFAULT_SETTINGS.title : title,
+    title: title === 'TOUCH TEST: 99%' || title === 'HUMAN VERIFICATION' ? DEFAULT_SETTINGS.title : title,
     tagline: stringValue(source.tagline, DEFAULT_SETTINGS.tagline, 80),
     smallCopy: stringValue(source.smallCopy, DEFAULT_SETTINGS.smallCopy, 80),
     gameEnabled: booleanValue(source.gameEnabled, DEFAULT_SETTINGS.gameEnabled),
@@ -113,7 +114,7 @@ export function createDefaultData(): PersistedData {
 
 export function loadData(): PersistedData {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY)
+    const raw = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(PREVIOUS_STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY)
     if (!raw) return createDefaultData()
     const parsed = JSON.parse(raw) as Partial<PersistedData>
     if (parsed.version !== 1) return createDefaultData()
@@ -132,6 +133,7 @@ export function loadData(): PersistedData {
 export function saveData(data: PersistedData): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+    localStorage.removeItem(PREVIOUS_STORAGE_KEY)
     localStorage.removeItem(LEGACY_STORAGE_KEY)
   } catch {
     // A full storage quota must never interrupt a live carnival run.
@@ -198,6 +200,7 @@ export function resetSession(maxLives: number, seed = Date.now()): SessionPerfor
 
 export function clearStorage(): void {
   localStorage.removeItem(STORAGE_KEY)
+  localStorage.removeItem(PREVIOUS_STORAGE_KEY)
   localStorage.removeItem(LEGACY_STORAGE_KEY)
 }
 
@@ -214,4 +217,4 @@ function normalizeChallengeStats(value?: Partial<ChallengeStats>): ChallengeStat
   }
 }
 
-export { LEGACY_STORAGE_KEY, STORAGE_KEY }
+export { LEGACY_STORAGE_KEY, PREVIOUS_STORAGE_KEY, STORAGE_KEY }

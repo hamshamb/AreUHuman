@@ -179,7 +179,7 @@ export function ChallengeArena({ challenge, tier, seed, round, session, subjectI
       onLostPointerCaptureCapture={onPointerEndCapture}
       onContextMenu={event => event.preventDefault()}
     >
-      <div className="challenge-system-line"><span>HUMAN VERIFICATION // HV-09</span><b>{subjectId}</b><em>{phaseMessage(phase)}</em></div>
+      <div className="challenge-system-line"><span>AreUHuman // AUH-09</span><b>{subjectId}</b><em>{phaseMessage(phase)}</em></div>
       <div className="challenge-progress" data-tone={timerTone} aria-label={`${(remaining / 1000).toFixed(1)} seconds remaining`}><span style={{ transform: `scaleX(${remaining / (challenge.timeLimit * 1000)})` }} /><b>{(remaining / 1000).toFixed(1)}s</b></div>
       <header className="challenge-heading">
         <TestIdentifier category={challenge.category} number={round + 1} variant={challenge.variant} />

@@ -11,7 +11,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** One folder/module per rule, a central rule list, incremental disclosure, and a visible set of requirements that remain active together.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. If code is later copied, retain the MIT copyright and permission notice in copies or substantial portions.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** Rules constrain short physical touchscreen challenges across a scored session; the player is not editing one password and none of QuirkyLock's rules, puzzles, UI, or assets are copied.
+- **How AreUHuman differs:** Rules constrain short physical touchscreen challenges across a scored session; the player is not editing one password and none of QuirkyLock's rules, puzzles, UI, or assets are copied.
 
 ## 2. VibeWare
 
@@ -20,7 +20,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Isolated microgame scenes, a registry/configuration point, transition scenes that expose score/lives/speed, validation of registered games, and responsive scaling.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Direct reuse is blocked by the MIT/ISC conflict; if clarified, preserve the applicable notice and license.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It keeps the existing React/TypeScript challenge contract and selectively uses SVG/Canvas rather than adopting Phaser or VibeWare's scenes, prompts, games, telemetry, or art.
+- **How AreUHuman differs:** It keeps the existing React/TypeScript challenge contract and selectively uses SVG/Canvas rather than adopting Phaser or VibeWare's scenes, prompts, games, telemetry, or art.
 
 ## 3. I'm Not a Robot (Henry Amatsu)
 
@@ -29,7 +29,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Begin with recognizable CAPTCHA framing, then progressively reveal that verification is the game.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Permission would be required before copying; credit alone is not permission.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It is an offline-capable carnival score attack with rapid measurable touch tests, persistent rules, PIX, lives, operator tools, and local leaderboards—not a full-stack CAPTCHA level clone.
+- **How AreUHuman differs:** It is an offline-capable carnival score attack with rapid measurable touch tests, persistent rules, PIX, lives, operator tools, and local leaderboards—not a full-stack CAPTCHA level clone.
 
 ## 4. Kitboga Code Jam 2025 template/event
 
@@ -38,7 +38,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Small constrained interactions, locally packaged assets, readable spectator comedy, skill over chance, eventual completable outcomes, and explicit difficulty controls.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Obtain permission for direct reuse; the submission agreement is not a public license.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It is a full-screen, multi-round, persistent PWA/kiosk session rather than a 390×300 embedded CAPTCHA intended for a Code Jam submission.
+- **How AreUHuman differs:** It is a full-screen, multi-round, persistent PWA/kiosk session rather than a 390×300 embedded CAPTCHA intended for a Code Jam submission.
 
 ## 5. Wes Bos Kitboga CAPTCHA
 
@@ -47,7 +47,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Data-driven target durations and tolerances, several concurrent timers, and exact early/late feedback after measured release times.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Resolve the incomplete/conflicting license evidence before reuse; if MIT is confirmed, retain its copyright and permission notice.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** Biometric calibration/charge mechanics use original terminal visuals, short arcade pacing, and truthful millisecond metrics rather than food, grilling, its timing values, music, or assets.
+- **How AreUHuman differs:** Biometric calibration/charge mechanics use original terminal visuals, short arcade pacing, and truthful millisecond metrics rather than food, grilling, its timing values, music, or assets.
 
 ## 6. Crow Lifting Weights CAPTCHA
 
@@ -56,7 +56,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** A short ordered-input sequence with embodied animation, immediate positive feedback per step, and a clear reset animation after a mistake.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Permission is needed for code or crow imagery; credit alone is insufficient.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It uses original geometric/PIX feedback and touch coordination metrics, not the crow, the word sequence, frames, background, or submission implementation.
+- **How AreUHuman differs:** It uses original geometric/PIX feedback and touch coordination metrics, not the crow, the word sequence, frames, background, or submission implementation.
 
 ## 7. Scratch-Off CAPTCHA
 
@@ -65,7 +65,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Canvas erasure with `destination-out`, spatial coverage bins, and a completion threshold. The reference listens to mouse movement, so its input handling is not a model for robust touch.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Permission is required for code and assets.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** Original sensor-cleaning visuals use Pointer Events, pointer cancellation/capture, continuous touch paths, honest percent-cleared measurement, and no scratch-card art or GIFs.
+- **How AreUHuman differs:** Original sensor-cleaning visuals use Pointer Events, pointer cancellation/capture, continuous touch paths, honest percent-cleared measurement, and no scratch-card art or GIFs.
 
 ## 8. Word Problem CAPTCHA
 
@@ -74,7 +74,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Separate structured problem data from evaluation logic, generate parameters, and introduce meaningful red herrings without making the solution random.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Permission is required for implementation or problem text.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It converts the principle into glanceable 3–8 second visual logic tasks and attribute filtering, avoiding long prose, copied problem templates, and dropdown UX.
+- **How AreUHuman differs:** It converts the principle into glanceable 3–8 second visual logic tasks and attribute filtering, avoiding long prose, copied problem templates, and dropdown UX.
 
 ## 9. Human Benchmark clone
 
@@ -83,7 +83,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Store objective per-attempt results, show history/statistics, and separate reaction, aim, number, sequence, and visual-memory measurements.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Permission is required for any code/assets.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** Metrics feed one escalating carnival run—milliseconds, pixels, touch delta, accuracy, completion time, combo, and adaptive difficulty—with no account/cloud dependency or copied Human Benchmark presentation.
+- **How AreUHuman differs:** Metrics feed one escalating carnival run—milliseconds, pixels, touch delta, accuracy, completion time, combo, and adaptive difficulty—with no account/cloud dependency or copied Human Benchmark presentation.
 
 ## 10. crisp-game-lib
 
@@ -92,7 +92,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Very small update loops, simple geometric collision, one-input readability, procedural sound, difficulty progression, fast restart, and mobile performance discipline.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. If code is later copied, retain the MIT copyright and permission notice.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It keeps React as the shell and uses its own challenge runtime, pointer geometry, Web Audio, visuals, and scoring instead of adding crisp-game-lib or copying its samples.
+- **How AreUHuman differs:** It keeps React as the shell and uses its own challenge runtime, pointer geometry, Web Audio, visuals, and scoring instead of adding crisp-game-lib or copying its samples.
 
 ## 11. Claude One-Button Game Creation
 
@@ -101,7 +101,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Generate mechanically distinct games from constrained input, document each design, isolate each implementation, and browser-smoke-test every result before curation.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. If code is later copied, retain the MIT copyright and permission notice.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It applies the simplicity lesson to curated 3–8 second tests inside one coherent rules/scoring system; it is not an AI batch generator and does not ship generated examples unchanged.
+- **How AreUHuman differs:** It applies the simplicity lesson to curated 3–8 second tests inside one coherent rules/scoring system; it is not an AI batch generator and does not ship generated examples unchanged.
 
 ## 12. One-Button Game Builder
 
@@ -110,7 +110,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Define input action, characters/state, score, failure, difficulty progression, and sound as separate design decisions before implementation; use limited input for timing and risk/reward.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. If code is later copied, retain the MIT copyright and permission notice.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** One-tap challenges are only part of a broader multi-touch, trace, drag, swipe, memory, logic, persistent-rule, and mascot system with real measured feedback.
+- **How AreUHuman differs:** One-tap challenges are only part of a broader multi-touch, trace, drag, swipe, memory, logic, persistent-rule, and mascot system with real measured feedback.
 
 ## 13. One-Prompt Games
 
@@ -119,7 +119,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** A broad mechanic inventory—memory matrix, rhythm judgements, dodge/near-miss play, inhibition/escalation, Web Audio cues, mobile controls, and local high scores—plus explicit state and scoring in each brief.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Resolve the missing ISC notice before reuse; if clarified, preserve its copyright and permission notice.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It uses original short verification mechanics and art, measures actual performance, enforces cleanup/accessibility, and curates for a shared session rather than shipping unrelated one-prompt games.
+- **How AreUHuman differs:** It uses original short verification mechanics and art, measures actual performance, enforces cleanup/accessibility, and curates for a shared session rather than shipping unrelated one-prompt games.
 
 ## 14. Touch Games
 
@@ -128,7 +128,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Large direct-manipulation surfaces and layouts that remain playable on touchscreens. Treat the older event handling as historical reference only.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Do not copy without resolving each component's origin and license.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It uses modern Pointer Events, multiple simultaneous pointer IDs, capture/cancel cleanup, diagnostics, and original microgames—not touch adaptations of Pac-Man, 2048, Simon, or other existing games.
+- **How AreUHuman differs:** It uses modern Pointer Events, multiple simultaneous pointer IDs, capture/cancel cleanup, diagnostics, and original microgames—not touch adaptations of Pac-Man, 2048, Simon, or other existing games.
 
 ## 15. LittleJS
 
@@ -137,7 +137,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Lightweight render/update separation, pooled particles, primitive debug drawing, mobile input, procedural ZzFX-style sound, and performance-conscious Canvas/WebGL effects.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. If code is later copied, retain the MIT copyright and permission notice.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It keeps the current React/SVG/Canvas architecture and original procedural Web Audio rather than adopting the engine, its API, effects, examples, or sound implementation.
+- **How AreUHuman differs:** It keeps the current React/SVG/Canvas architecture and original procedural Web Audio rather than adopting the engine, its API, effects, examples, or sound implementation.
 
 ## 16. Neal.fun — The Password Game
 
@@ -146,7 +146,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** A familiar input that gradually reveals surprising new constraints, with prior constraints remaining visible and active.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. Do not copy proprietary code, exact rules, jokes, text, art, or sequence; attribution would not substitute for permission.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** Persistent rules span physical microgames and expire/compose through compatibility metadata; there is no password field and the exact escalation is original.
+- **How AreUHuman differs:** Persistent rules span physical microgames and expire/compose through compatibility metadata; there is no password field and the exact escalation is original.
 
 ## 17. Neal.fun — I'm Not a Robot
 
@@ -155,7 +155,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Start from a universally readable checkbox, then escalate through self-contained levels with a clear completion signal.
 - **Code reused:** No, including no iframe/embed dependency.
 - **Attribution requirement:** None triggered. Do not copy exact levels, jokes, copy, visual identity, or assets without permission.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It is a standalone offline score attack with lives, combos, measured touch skill, persistent rules, PIX, operator tools, and local persistence rather than a sequence of embedded CAPTCHA levels.
+- **How AreUHuman differs:** It is a standalone offline score attack with lives, combos, measured touch skill, persistent rules, PIX, operator tools, and local persistence rather than a sequence of embedded CAPTCHA levels.
 
 ## 18. CAPTCHA Hell
 
@@ -164,7 +164,7 @@ Reviewed 2026-08-12 against primary sources: repository pages, repository licens
 - **Useful idea:** Turn an ordinary verification interruption into a larger fiction, use escalating absurdity and interface surprises, and make failure entertaining while retaining a solvable objective.
 - **Code reused:** No.
 - **Attribution requirement:** None triggered. No code, story, characters, names, art, text, or challenge sequence may be copied without permission.
-- **How HUMAN VERIFICATION / ARE U HUMAN? differs:** It is an immediate school-carnival arcade competition with original biometric-terminal visuals and PIX, not a story-rich fake-desktop adventure about obtaining a concert ticket.
+- **How AreUHuman differs:** It is an immediate school-carnival arcade competition with original biometric-terminal visuals and PIX, not a story-rich fake-desktop adventure about obtaining a concert ticket.
 
 ## Adoption guardrails
 

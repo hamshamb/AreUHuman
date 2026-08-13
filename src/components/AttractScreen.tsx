@@ -55,7 +55,7 @@ export function AttractScreen({ settings, leaderboard, averageDurationMs, onStar
       <TerminalHeader status={status} humanity={best?.score ?? 0} />
       <section className="attract-identity">
         <button className={`brand-lockup ${adminHolding ? 'is-holding' : ''}`} onPointerDown={beginAdminHold} onPointerUp={endAdminHold} onPointerCancel={endAdminHold} onPointerLeave={endAdminHold} onKeyDown={event => { if (!event.repeat && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); beginAdminHold() } }} onKeyUp={event => { if (event.key === 'Enter' || event.key === ' ') endAdminHold() }} aria-label={`${settings.title}. Hold for operator access.`}>
-          <span>INSTITUTIONAL HUMAN VERIFICATION</span>
+          <span>INSTITUTIONAL AreUHuman</span>
           <h1>{settings.title}</h1>
           <i />
         </button>

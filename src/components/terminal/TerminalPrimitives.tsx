@@ -11,7 +11,7 @@ export function TerminalFrame({ state, phase = 'standard', children, className =
 export function TerminalHeader({ subjectId, status, humanity, testNumber, compact = false }: { subjectId?: string; status: string; humanity?: number; testNumber?: number; compact?: boolean }) {
   return (
     <header className={`terminal-header ${compact ? 'terminal-header--compact' : ''}`}>
-      <div className="terminal-header__system"><span>HUMAN VERIFICATION SYSTEM</span><b>HV-09</b></div>
+      <div className="terminal-header__system"><span>AreUHuman SYSTEM</span><b>AUH-09</b></div>
       <div className="terminal-header__status"><span>STATUS</span><b>{status}</b></div>
       {subjectId && <SubjectIdentifier value={subjectId} />}
       {testNumber !== undefined && <div className="terminal-header__test"><span>TEST</span><b>{String(testNumber).padStart(2, '0')} / 32</b></div>}

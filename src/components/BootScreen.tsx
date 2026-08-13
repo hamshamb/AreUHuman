@@ -14,7 +14,7 @@ export function BootScreen({ onComplete }: { onComplete: () => void }) {
     <TerminalFrame state="boot" className="boot-screen">
       <TerminalHeader status="SYSTEM BOOT" />
       <section className="boot-sequence" aria-live="polite">
-        <CalibrationCross label="HV-09" />
+        <CalibrationCross label="AUH-09" />
         <div><span>INITIALIZATION SEQUENCE</span><h1>VERIFYING TERMINAL</h1></div>
         <ol>{checks.map((check, index) => <li key={check}><b>{check}</b><i /> <span>{ready > index ? 'READY' : 'CHECKING'}</span></li>)}</ol>
         <p>HUMAN STATUS <b>UNKNOWN</b></p>

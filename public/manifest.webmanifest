@@ -1,7 +1,7 @@
 {
-  "name": "HUMAN VERIFICATION",
-  "short_name": "HUMAN VERIFY",
-  "description": "A fair, escalating touchscreen human-verification skill test.",
+  "name": "AreUHuman",
+  "short_name": "AreUHuman",
+  "description": "A fair, escalating touchscreen skill test.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "landscape-primary",

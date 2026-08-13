@@ -10,7 +10,7 @@ export function SetupScreen({ settings, onComplete }: Props) {
   return (
     <TerminalFrame state="operator" className="setup-screen">
       <TerminalHeader status="COMMISSIONING REQUIRED" />
-      <section className="setup-intro"><Pix label /><span>FIRST RUN // AUTHORIZED OPERATOR</span><h1>HV-09 TERMINAL COMMISSIONING</h1><p>Confirm four local defaults. All values remain on this display and can be changed later through operator access.</p></section>
+      <section className="setup-intro"><Pix label /><span>FIRST RUN // AUTHORIZED OPERATOR</span><h1>AUH-09 TERMINAL COMMISSIONING</h1><p>Confirm four local defaults. All values remain on this display and can be changed later through operator access.</p></section>
       <section className="setup-form">
         <label><span>DISPLAY TITLE</span><input value={draft.title} maxLength={32} onChange={event => setDraft({ ...draft, title: event.target.value || settings.title })} /></label>
         <label className="switch-row"><span>INTAKE MODE<small>{draft.freePlay ? 'Verification available without operator credit' : 'An available attempt is required'}</small></span><button type="button" aria-pressed={draft.freePlay} className={draft.freePlay ? 'active' : ''} onClick={() => setDraft({ ...draft, freePlay: !draft.freePlay })}>{draft.freePlay ? 'FREE PLAY' : 'TOKEN CONTROL'}</button></label>

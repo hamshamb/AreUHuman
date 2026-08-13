@@ -52,7 +52,7 @@ export function AdminPanel({ data, activeRules, lastTestSpec, lastTestResult, on
 
   return (
     <main className="admin-screen">
-      <aside className="admin-sidebar"><div><span>HV-09</span><b>OPERATOR</b></div>{tabs.map(item => <button key={item.id} className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}>{item.label}</button>)}<button className="admin-close" onClick={onClose}>EXIT OPERATOR MODE</button></aside>
+      <aside className="admin-sidebar"><div><span>AUH-09</span><b>OPERATOR</b></div>{tabs.map(item => <button key={item.id} className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}>{item.label}</button>)}<button className="admin-close" onClick={onClose}>EXIT OPERATOR MODE</button></aside>
       <section className="admin-content">
         <header><div><span>LOCAL TERMINAL CONTROL</span><h1>{tabs.find(item => item.id === tab)?.label}</h1></div><b>CHANGES COMMIT AUTOMATICALLY</b></header>
 

@@ -287,7 +287,7 @@ export default function App() {
 
   return (
     <div className="app-shell" onPointerDownCapture={unlockAudio}>
-      <div className="rotate-notice"><span>HV-09</span><h1>DISPLAY ORIENTATION INVALID</h1><p>Rotate the device 90 degrees to continue verification.</p></div>
+      <div className="rotate-notice"><span>AUH-09</span><h1>DISPLAY ORIENTATION INVALID</h1><p>Rotate the device 90 degrees to continue verification.</p></div>
       {view === 'boot' && <BootScreen onComplete={() => setView('attract')} />}
       {view === 'attract' && <AttractScreen settings={settings} leaderboard={data.leaderboard} averageDurationMs={averageDuration} onStart={beginGame} onLeaderboard={() => setView('leaderboard')} onAdmin={() => setView('pin')} onFullscreen={fullscreen} />}
       {view === 'ready' && session && subjectId && <ReadyScreen lives={session.maxLives} subjectId={subjectId} onComplete={() => setView('playing')} />}

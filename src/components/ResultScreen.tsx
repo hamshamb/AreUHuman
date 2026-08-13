@@ -32,7 +32,7 @@ export function ResultScreen({ summary, timeoutSeconds, onReplay, onLeaderboard,
       <TerminalHeader subjectId={summary.subjectId} status={failed ? 'VERIFICATION FAILED' : 'REPORT COMPLETE'} humanity={summary.score} />
       {summary.isNewStandard && <div className="new-standard"><span>REFERENCE HUMAN UPDATED</span><b>{summary.score.toFixed(2)}%</b><small>NEW HUMAN STANDARD</small></div>}
       <section className="result-report">
-        <div className="result-report__title"><span>HUMAN VERIFICATION REPORT</span><VerificationStamp label={failed ? 'INVALID' : 'VERIFIED'} tone={failed ? 'failure' : 'verified'} /></div>
+        <div className="result-report__title"><span>AreUHuman REPORT</span><VerificationStamp label={failed ? 'INVALID' : 'VERIFIED'} tone={failed ? 'failure' : 'verified'} /></div>
         <div className="result-report__score"><HumanityDisplay value={summary.score} hero /><div><span>CLASSIFICATION</span><h1>{summary.category}</h1>{summary.rankToday && <p>TODAY'S RANK <b>#{summary.rankToday}</b></p>}</div></div>
         <div className="result-measurements">
           <MeasurementValue label="TESTS SURVIVED" value={String(summary.completed).padStart(2, '0')} />

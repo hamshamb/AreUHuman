@@ -1,8 +1,8 @@
-# HUMAN VERIFICATION
+# AreUHuman
 
 Live release: [areuhuman.netlify.app](https://areuhuman.netlify.app)
 
-HUMAN VERIFICATION is a production touchscreen skill game for supervised carnival and kiosk use. A subject completes short interaction, memory, timing, and logic tests while compatible conditions accumulate across the session. Results come from measured input - including timing error, contact delta, path drift, precision error, reaction time, velocity, and completion time - rather than fabricated near misses or random outcomes.
+AreUHuman is a production touchscreen skill game for supervised carnival and kiosk use. A subject completes short interaction, memory, timing, and logic tests while compatible conditions accumulate across the session. Results come from measured input - including timing error, contact delta, path drift, precision error, reaction time, velocity, and completion time - rather than fabricated near misses or random outcomes.
 
 The shipped catalog contains 54 playable variants across 44 mechanics and 12 persistent conditions. It includes adaptive difficulty, lives and response chains, local leaderboards and statistics, deterministic prize thresholds, operator playtesting, hardware touch diagnostics, procedural Web Audio, and an offline-capable PWA shell.
 
@@ -43,7 +43,7 @@ Connect the repository to Netlify and deploy. For a manual deployment, run `npm 
 
 ## Operator workflow
 
-From standby, press and hold the HUMAN VERIFICATION title for four seconds, then enter the local PIN. `Ctrl+Shift+A` opens the same PIN prompt while the standby screen is active.
+From standby, press and hold the AreUHuman title for four seconds, then enter the local PIN. `Ctrl+Shift+A` opens the same PIN prompt while the standby screen is active.
 
 - Default development PIN: `9900`
 - The PIN can be changed in the operator controls.
@@ -86,16 +86,16 @@ The 12 persistent conditions use explicit compatibility rules so every active co
 Settings, leaderboard entries, aggregate run data, personal bests, and per-variant statistics are stored in the browser under the versioned key:
 
 ```text
-human-verification:data:v1
+are-u-human:data:v1
 ```
 
-Legacy HUMAN VERIFICATION installations migrate automatically. The only player-provided personal data is the optional local leaderboard name, which is sanitized before storage. JSON and CSV exports are initiated by the operator and remain local unless the operator moves them elsewhere.
+Previous-brand installations migrate automatically to AreUHuman. The only player-provided personal data is the optional local leaderboard name, which is sanitized before storage. JSON and CSV exports are initiated by the operator and remain local unless the operator moves them elsewhere.
 
 Clearing this site's browser storage resets settings, scores, statistics, and first-run commissioning.
 
 ## Offline and PWA behavior
 
-Production builds register `public/sw.js`; development mode intentionally does not. Service-worker cache v3 (`human-verification-v3`) precaches the application shell, manifest, local icon/social image, and hashed build assets. Navigations are network-first with an offline shell fallback, while same-origin assets are cache-first and never receive HTML as an error fallback. New releases activate and claim an open kiosk immediately.
+Production builds register `public/sw.js`; development mode intentionally does not. Service-worker cache v4 (`are-u-human-v4`) precaches the application shell, manifest, local icon/social image, and hashed build assets. Navigations are network-first with an offline shell fallback, while same-origin assets are cache-first and never receive HTML as an error fallback. New releases activate and claim an open kiosk immediately.
 
 Offline use begins after one successful production load. For a material release, increment the `CACHE` name in `public/sw.js` so activation removes the previous cache. If a booth still displays an old release, reload once online; clear the browser cache only when necessary. Clearing all site data also removes local operator settings and records.
 

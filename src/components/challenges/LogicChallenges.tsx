@@ -63,7 +63,7 @@ export function LogicChallenges({ challenge, tier, seed, round, paused, onResult
   }
 
   if (challenge.kind === 'system-check') {
-    return <div className="system-check"><div className="system-check__top"><Pix mood="panic" /><span>TOUCH INPUT DRIVER</span><b>OFFLINE</b></div><p>RECOVERY CONSOLE // ERROR HV-09-R</p><h2>SIGNAL INTERRUPTED</h2><div><button onPointerDown={tap(() => onResult(failure('RECOVERY PATH INVALID', 'Reboot was a simulated decoy.')))}>REBOOT</button><button className="restore" onPointerDown={tap(() => onResult(success('SYSTEM RESTORED', 1, 'Verified recovery path', undefined, { completionTimeMs: elapsed })))}>RESTORE SIGNAL</button><button onPointerDown={tap(() => onResult(failure('RECOVERY PATH INVALID', 'Clearing logs does not restore input.')))}>CLEAR LOGS</button></div></div>
+    return <div className="system-check"><div className="system-check__top"><Pix mood="panic" /><span>TOUCH INPUT DRIVER</span><b>OFFLINE</b></div><p>RECOVERY CONSOLE // ERROR AUH-09-R</p><h2>SIGNAL INTERRUPTED</h2><div><button onPointerDown={tap(() => onResult(failure('RECOVERY PATH INVALID', 'Reboot was a simulated decoy.')))}>REBOOT</button><button className="restore" onPointerDown={tap(() => onResult(success('SYSTEM RESTORED', 1, 'Verified recovery path', undefined, { completionTimeMs: elapsed })))}>RESTORE SIGNAL</button><button onPointerDown={tap(() => onResult(failure('RECOVERY PATH INVALID', 'Clearing logs does not restore input.')))}>CLEAR LOGS</button></div></div>
   }
 
   return <div className="challenge-error">UNREGISTERED LOGIC TEST // {challenge.name}</div>

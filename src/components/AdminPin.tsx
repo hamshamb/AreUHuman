@@ -97,7 +97,7 @@ export function AdminPin({ expected, onSuccess, onCancel }: { expected: string; 
   return (
     <div className="modal-backdrop">
       <section ref={panel} className="pin-panel" role="dialog" aria-modal="true" aria-labelledby="pin-title" aria-describedby="pin-description" tabIndex={-1}>
-        <span>HV-09 // AUTHORIZED OPERATOR</span>
+        <span>AUH-09 // AUTHORIZED OPERATOR</span>
         <h2 id="pin-title">OPERATOR ACCESS</h2>
         <p id="pin-description">ENTER LOCAL CONTROL PIN</p>
         <div className={error ? 'pin-dots error' : 'pin-dots'} aria-label={`${pin.length} of ${expected.length} digits entered`}>

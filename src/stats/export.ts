@@ -20,13 +20,13 @@ export function calculateStats(data: PersistedData) {
 }
 
 export function downloadJson(data: PersistedData) {
-  download(`human-verification-export-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify({ exportedAt: new Date().toISOString(), summary: calculateStats(data), data }, null, 2), 'application/json')
+  download(`are-u-human-export-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify({ exportedAt: new Date().toISOString(), summary: calculateStats(data), data }, null, 2), 'application/json')
 }
 
 export function downloadCsv(data: PersistedData) {
   const header = 'name,score,date,challenges,best_combo,precision,duration_ms'
   const rows = data.leaderboard.map(entry => [entry.name, entry.score, entry.createdAt, entry.challenges, entry.bestCombo, entry.precision, entry.durationMs].map(csvCell).join(','))
-  download(`human-verification-leaderboard-${new Date().toISOString().slice(0, 10)}.csv`, [header, ...rows].join('\n'), 'text/csv')
+  download(`are-u-human-leaderboard-${new Date().toISOString().slice(0, 10)}.csv`, [header, ...rows].join('\n'), 'text/csv')
 }
 
 function csvCell(value: string | number) {

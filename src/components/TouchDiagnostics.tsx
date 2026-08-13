@@ -364,10 +364,10 @@ export function TouchDiagnostics({ onClose }: TouchDiagnosticsProps) {
   }, [])
 
   return (
-    <section className="touch-diagnostics" aria-label="HV-09 touchscreen hardware diagnostics">
+    <section className="touch-diagnostics" aria-label="AUH-09 touchscreen hardware diagnostics">
       <header className="touch-diagnostics__header">
         <div>
-          <span className="touch-diagnostics__eyebrow">HUMAN VERIFICATION SYSTEM // HV-09</span>
+          <span className="touch-diagnostics__eyebrow">AreUHuman SYSTEM // AUH-09</span>
           <h1>TOUCH ARRAY DIAGNOSTIC</h1>
           <p>APPLICATION INPUT INSPECTION // NO OPERATING-SYSTEM CALIBRATION</p>
         </div>
@@ -473,7 +473,7 @@ export function TouchDiagnostics({ onClose }: TouchDiagnosticsProps) {
 
             {checkStatus === 'complete' && (
               <div className="touch-diagnostics__check-copy touch-diagnostics__check-copy--complete" role="status">
-                <span>HV-09 // INPUT REPORT</span>
+                <span>AUH-09 // INPUT REPORT</span>
                 <strong>TOUCH ARRAY VERIFIED</strong>
                 <p>Six application input checks registered through Pointer Events.</p>
                 <small>This confirms browser input only. It does not modify device calibration.</small>

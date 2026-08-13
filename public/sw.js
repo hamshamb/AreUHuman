@@ -1,5 +1,5 @@
 /* global self, caches, fetch */
-const CACHE = 'human-verification-v3'
+const CACHE = 'are-u-human-v4'
 const SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icon.svg', '/og.png']
 
 async function precacheRelease() {

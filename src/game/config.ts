@@ -1,7 +1,7 @@
 import type { Difficulty, GameSettings } from './types'
 
 export const DEFAULT_SETTINGS: GameSettings = {
-  title: 'HUMAN VERIFICATION',
+  title: 'AreUHuman',
   tagline: 'How well can you actually use a touchscreen?',
   smallCopy: "Most people think they're good at this.",
   gameEnabled: true,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { createDefaultData, LEGACY_STORAGE_KEY, loadData, recordChallenge, resetSession, saveData, sortLeaderboard, todayEntries } from '../storage/store'
+import { createDefaultData, LEGACY_STORAGE_KEY, loadData, PREVIOUS_STORAGE_KEY, recordChallenge, resetSession, saveData, sortLeaderboard, STORAGE_KEY, todayEntries } from '../storage/store'
 
 describe('versioned local persistence', () => {
   it('round-trips operator configuration', () => {
@@ -10,8 +10,8 @@ describe('versioned local persistence', () => {
   })
 
   it('recovers safely from malformed storage', () => {
-    localStorage.setItem('human-verification:data:v1', '{broken')
-    expect(loadData().settings.title).toBe('HUMAN VERIFICATION')
+    localStorage.setItem(STORAGE_KEY, '{broken')
+    expect(loadData().settings.title).toBe('AreUHuman')
   })
 
   it('migrates legacy scores and the former default title', () => {
@@ -19,7 +19,15 @@ describe('versioned local persistence', () => {
     legacy.settings.title = 'TOUCH TEST: 99%'
     legacy.totalPlays = 12
     localStorage.setItem(LEGACY_STORAGE_KEY, JSON.stringify(legacy))
-    expect(loadData()).toMatchObject({ totalPlays: 12, settings: { title: 'HUMAN VERIFICATION' } })
+    expect(loadData()).toMatchObject({ totalPlays: 12, settings: { title: 'AreUHuman' } })
+  })
+
+  it('migrates the previous product storage key and default title', () => {
+    const previous = createDefaultData()
+    previous.settings.title = 'HUMAN VERIFICATION'
+    previous.totalPlays = 7
+    localStorage.setItem(PREVIOUS_STORAGE_KEY, JSON.stringify(previous))
+    expect(loadData()).toMatchObject({ totalPlays: 7, settings: { title: 'AreUHuman' } })
   })
 
   it('sorts leaderboard scores with fair tie breakers', () => {
