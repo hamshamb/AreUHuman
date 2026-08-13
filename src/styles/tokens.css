@@ -1,0 +1,56 @@
+:root {
+  color-scheme: dark;
+  --hv-background: #111210;
+  --hv-surface: #171916;
+  --hv-surface-raised: #1d201c;
+  --hv-surface-deep: #0c0d0c;
+  --hv-text: #e7e4da;
+  --hv-muted: #858a84;
+  --hv-line: #353934;
+  --hv-line-strong: #5b615a;
+  --hv-verified: #88a870;
+  --hv-warning: #dda537;
+  --hv-failure: #d64b3f;
+  --hv-information: #6d7a80;
+  --hv-on-accent: #111210;
+  --hv-font-display: "Bahnschrift SemiCondensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --hv-font-data: "Cascadia Mono", "IBM Plex Mono", Consolas, monospace;
+  --hv-space-1: 4px;
+  --hv-space-2: 8px;
+  --hv-space-3: 12px;
+  --hv-space-4: 16px;
+  --hv-space-6: 24px;
+  --hv-space-8: 32px;
+  --hv-space-12: 48px;
+  --hv-space-16: 64px;
+  --hv-radius-system: 2px;
+  --hv-radius-control: 4px;
+  --hv-radius-touch: 8px;
+  --hv-motion-fast: 80ms;
+  --hv-motion-warning: 130ms;
+  --hv-motion-system: 160ms;
+  --hv-motion-success: 180ms;
+  --hv-motion-challenge: 240ms;
+  --hv-motion-major: 900ms;
+  --hv-ease-system: linear;
+  --hv-ease-object: cubic-bezier(.2, .75, .25, 1);
+  --hv-touch-ui: 48px;
+  --hv-touch-player: 64px;
+  --hv-touch-primary: 96px;
+  --screen-scale: 1;
+
+}
+
+[data-contrast="high"] {
+  --hv-background: #050605;
+  --hv-surface: #0b0d0b;
+  --hv-surface-raised: #151815;
+  --hv-text: #ffffff;
+  --hv-muted: #c5c8c3;
+  --hv-line: #777d74;
+  --hv-line-strong: #f2f2ed;
+  --hv-verified: #b7df98;
+  --hv-warning: #ffd060;
+  --hv-failure: #ff6c61;
+  --hv-information: #a9c0ca;
+}

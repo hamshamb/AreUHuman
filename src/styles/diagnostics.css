@@ -1,0 +1,699 @@
+.touch-diagnostics {
+  --hv-diagnostic-bg: var(--hv-background, #111210);
+  --hv-diagnostic-surface: var(--hv-surface, #171815);
+  --hv-diagnostic-raised: var(--hv-surface-raised, #1d1f1b);
+  --hv-diagnostic-text: var(--hv-text, #e7e4da);
+  --hv-diagnostic-muted: var(--hv-muted, #858a84);
+  --hv-diagnostic-line: var(--hv-line, rgba(231, 228, 218, 0.19));
+  --hv-diagnostic-verified: var(--hv-verified, #88a870);
+  --hv-diagnostic-warning: var(--hv-warning, #dda537);
+  --hv-diagnostic-failure: var(--hv-failure, #d64b3f);
+  --hv-diagnostic-information: var(--hv-information, #6d7a80);
+  --hv-diagnostic-display: var(--hv-font-display, "Arial Narrow", "Roboto Condensed", sans-serif);
+  --hv-diagnostic-data: var(--hv-font-data, "Cascadia Mono", "IBM Plex Mono", monospace);
+  min-height: 100%;
+  padding: clamp(18px, 2.5vw, 38px);
+  color: var(--hv-diagnostic-text);
+  background: var(--hv-diagnostic-bg);
+  font-family: var(--hv-diagnostic-display);
+}
+
+.touch-diagnostics *,
+.touch-diagnostics *::before,
+.touch-diagnostics *::after {
+  box-sizing: border-box;
+}
+
+.touch-diagnostics__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--hv-diagnostic-line);
+}
+
+.touch-diagnostics__eyebrow,
+.touch-diagnostics__header p,
+.touch-diagnostics__section-label,
+.touch-diagnostics__header-status,
+.touch-diagnostics__notice,
+.touch-diagnostics__check-copy > span,
+.touch-diagnostics__check-copy > small,
+.touch-diagnostics__check-results,
+.touch-diagnostics__active,
+.touch-diagnostics__history,
+.touch-diagnostics__footnote {
+  font-family: var(--hv-diagnostic-data);
+  font-variant-numeric: tabular-nums;
+}
+
+.touch-diagnostics__eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--hv-diagnostic-verified);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.touch-diagnostics h1 {
+  margin: 0;
+  font-family: var(--hv-diagnostic-display);
+  font-size: clamp(34px, 4.2vw, 68px);
+  font-stretch: condensed;
+  font-weight: 900;
+  line-height: .9;
+  letter-spacing: -.035em;
+}
+
+.touch-diagnostics__header p {
+  margin: 10px 0 0;
+  color: var(--hv-diagnostic-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.touch-diagnostics__header-status {
+  min-width: 230px;
+  padding: 0 0 3px 18px;
+  border-left: 1px solid var(--hv-diagnostic-line);
+  text-align: right;
+}
+
+.touch-diagnostics__header-status span,
+.touch-diagnostics__header-status small {
+  display: block;
+  color: var(--hv-diagnostic-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.touch-diagnostics__header-status strong {
+  display: block;
+  margin: 3px 0;
+  color: var(--hv-diagnostic-verified);
+  font-size: 47px;
+  line-height: .9;
+}
+
+.touch-diagnostics__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 0;
+}
+
+.touch-diagnostics__controls button {
+  min-height: 54px;
+  padding: 0 22px;
+  color: var(--hv-diagnostic-text);
+  background: var(--hv-diagnostic-raised);
+  border: 1px solid var(--hv-diagnostic-line);
+  border-radius: 2px;
+  font-family: var(--hv-diagnostic-data);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  touch-action: manipulation;
+}
+
+.touch-diagnostics__controls button:active {
+  color: var(--hv-diagnostic-bg);
+  background: var(--hv-diagnostic-text);
+}
+
+.touch-diagnostics__controls button:focus-visible,
+.touch-diagnostics__surface:focus-visible {
+  outline: 3px solid var(--hv-diagnostic-warning);
+  outline-offset: 3px;
+}
+
+.touch-diagnostics__controls .touch-diagnostics__primary {
+  color: var(--hv-diagnostic-bg);
+  background: var(--hv-diagnostic-verified);
+  border-color: var(--hv-diagnostic-verified);
+}
+
+.touch-diagnostics__controls .touch-diagnostics__exit {
+  margin-left: auto;
+  color: var(--hv-diagnostic-failure);
+  border-color: color-mix(in srgb, var(--hv-diagnostic-failure), transparent 50%);
+}
+
+.touch-diagnostics__layout {
+  display: grid;
+  grid-template-columns: minmax(460px, 1.55fr) minmax(320px, .8fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.touch-diagnostics__field-panel,
+.touch-diagnostics__check,
+.touch-diagnostics__active,
+.touch-diagnostics__history {
+  min-width: 0;
+  background: var(--hv-diagnostic-surface);
+  border: 1px solid var(--hv-diagnostic-line);
+}
+
+.touch-diagnostics__section-label {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 12px;
+  color: var(--hv-diagnostic-muted);
+  border-bottom: 1px solid var(--hv-diagnostic-line);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.touch-diagnostics__surface {
+  position: relative;
+  min-height: clamp(430px, 56vh, 690px);
+  overflow: hidden;
+  background-color: var(--hv-diagnostic-bg);
+  border: 8px solid var(--hv-diagnostic-surface);
+  outline: 1px solid var(--hv-diagnostic-line);
+  outline-offset: -9px;
+  cursor: crosshair;
+  isolation: isolate;
+  touch-action: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.touch-diagnostics__surface::before,
+.touch-diagnostics__surface::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  pointer-events: none;
+}
+
+.touch-diagnostics__surface::before {
+  inset: 22px;
+  border: 1px solid color-mix(in srgb, var(--hv-diagnostic-line), transparent 45%);
+}
+
+.touch-diagnostics__surface::after {
+  width: 18px;
+  height: 18px;
+  top: 15px;
+  left: 15px;
+  border-top: 2px solid var(--hv-diagnostic-muted);
+  border-left: 2px solid var(--hv-diagnostic-muted);
+}
+
+.touch-diagnostics__axis {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  background: color-mix(in srgb, var(--hv-diagnostic-line), transparent 48%);
+  pointer-events: none;
+}
+
+.touch-diagnostics__axis--horizontal {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+}
+
+.touch-diagnostics__axis--vertical {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+}
+
+.touch-diagnostics__surface-idle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(520px, calc(100% - 50px));
+  padding: 21px 18px;
+  border-top: 1px solid var(--hv-diagnostic-line);
+  border-bottom: 1px solid var(--hv-diagnostic-line);
+  text-align: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.touch-diagnostics__surface-idle b,
+.touch-diagnostics__surface-idle span {
+  display: block;
+  font-family: var(--hv-diagnostic-data);
+}
+
+.touch-diagnostics__surface-idle b {
+  font-size: clamp(13px, 1.3vw, 18px);
+  letter-spacing: .08em;
+}
+
+.touch-diagnostics__surface-idle span {
+  margin-top: 7px;
+  color: var(--hv-diagnostic-muted);
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.touch-diagnostics__target,
+.touch-diagnostics__pointer {
+  position: absolute;
+  top: var(--hv-target-y);
+  left: var(--hv-target-x);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.touch-diagnostics__target {
+  display: grid;
+  width: clamp(92px, 16vmin, 150px);
+  height: clamp(92px, 16vmin, 150px);
+  place-items: center;
+  border: 1px solid var(--hv-diagnostic-warning);
+  border-radius: 50%;
+  color: var(--hv-diagnostic-warning);
+}
+
+.touch-diagnostics__target::before,
+.touch-diagnostics__target::after {
+  position: absolute;
+  content: '';
+  background: var(--hv-diagnostic-warning);
+}
+
+.touch-diagnostics__target::before {
+  width: 30%;
+  height: 1px;
+}
+
+.touch-diagnostics__target::after {
+  width: 1px;
+  height: 30%;
+}
+
+.touch-diagnostics__target i {
+  width: 24%;
+  height: 24%;
+  border: 1px solid var(--hv-diagnostic-warning);
+  border-radius: 50%;
+}
+
+.touch-diagnostics__target b {
+  position: absolute;
+  font-family: var(--hv-diagnostic-data);
+  font-size: 17px;
+}
+
+.touch-diagnostics__target span {
+  position: absolute;
+  top: calc(100% + 6px);
+  font-family: var(--hv-diagnostic-data);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.touch-diagnostics__pointer {
+  top: var(--hv-pointer-y);
+  left: var(--hv-pointer-x);
+  z-index: 4;
+  width: max(58px, var(--hv-contact-w));
+  height: max(58px, var(--hv-contact-h));
+  border: 2px solid var(--hv-diagnostic-verified);
+  border-radius: 50%;
+  color: var(--hv-diagnostic-text);
+}
+
+.touch-diagnostics__pointer::before,
+.touch-diagnostics__pointer::after {
+  position: absolute;
+  content: '';
+  background: var(--hv-diagnostic-verified);
+}
+
+.touch-diagnostics__pointer::before {
+  width: calc(100% + 20px);
+  height: 1px;
+  top: 50%;
+  left: -10px;
+}
+
+.touch-diagnostics__pointer::after {
+  width: 1px;
+  height: calc(100% + 20px);
+  top: -10px;
+  left: 50%;
+}
+
+.touch-diagnostics__pointer i {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--hv-diagnostic-verified);
+  border-radius: 50%;
+}
+
+.touch-diagnostics__pointer b {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  padding: 2px 4px;
+  background: var(--hv-diagnostic-bg);
+  font-family: var(--hv-diagnostic-data);
+  font-size: 13px;
+  transform: translate(-50%, -50%);
+}
+
+.touch-diagnostics__pointer span {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  color: var(--hv-diagnostic-verified);
+  font-family: var(--hv-diagnostic-data);
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.touch-diagnostics__side {
+  display: grid;
+  min-width: 0;
+  grid-template-rows: auto minmax(170px, 1fr);
+  gap: 12px;
+}
+
+.touch-diagnostics__check {
+  min-height: 276px;
+}
+
+.touch-diagnostics__check--running {
+  border-color: color-mix(in srgb, var(--hv-diagnostic-warning), transparent 42%);
+}
+
+.touch-diagnostics__check--complete {
+  border-color: color-mix(in srgb, var(--hv-diagnostic-verified), transparent 35%);
+}
+
+.touch-diagnostics__check-copy {
+  padding: 18px;
+}
+
+.touch-diagnostics__check-copy > span,
+.touch-diagnostics__check-copy > strong,
+.touch-diagnostics__check-copy > small {
+  display: block;
+}
+
+.touch-diagnostics__check-copy > span {
+  margin-bottom: 8px;
+  color: var(--hv-diagnostic-warning);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.touch-diagnostics__check-copy > strong {
+  font-family: var(--hv-diagnostic-display);
+  font-size: clamp(24px, 2.5vw, 38px);
+  line-height: .95;
+  letter-spacing: -.02em;
+}
+
+.touch-diagnostics__check-copy > p {
+  margin: 12px 0 9px;
+  color: var(--hv-diagnostic-text);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.touch-diagnostics__check-copy > small {
+  color: var(--hv-diagnostic-muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.touch-diagnostics__check-copy--complete > span,
+.touch-diagnostics__check-copy--complete > strong {
+  color: var(--hv-diagnostic-verified);
+}
+
+.touch-diagnostics__notice {
+  min-height: 39px;
+  padding: 11px 18px;
+  color: var(--hv-diagnostic-warning);
+  background: var(--hv-diagnostic-bg);
+  border-top: 1px solid var(--hv-diagnostic-line);
+  border-bottom: 1px solid var(--hv-diagnostic-line);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+
+.touch-diagnostics__check--complete .touch-diagnostics__notice {
+  color: var(--hv-diagnostic-verified);
+}
+
+.touch-diagnostics__check-results {
+  max-height: 192px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.touch-diagnostics__check-results li {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 3px 10px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--hv-diagnostic-line);
+  font-size: 9px;
+}
+
+.touch-diagnostics__check-results li > b {
+  color: var(--hv-diagnostic-verified);
+}
+
+.touch-diagnostics__check-results li > span {
+  text-align: right;
+}
+
+.touch-diagnostics__check-results li > small {
+  grid-column: 1 / -1;
+  color: var(--hv-diagnostic-muted);
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.touch-diagnostics__active {
+  overflow: auto;
+}
+
+.touch-diagnostics__active > p {
+  margin: 0;
+  padding: 36px 18px;
+  color: var(--hv-diagnostic-muted);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-align: center;
+}
+
+.touch-diagnostics__active article {
+  padding: 12px;
+  border-bottom: 1px solid var(--hv-diagnostic-line);
+}
+
+.touch-diagnostics__active article header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+  color: var(--hv-diagnostic-verified);
+  font-size: 10px;
+}
+
+.touch-diagnostics__active article dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 0;
+  background: var(--hv-diagnostic-line);
+}
+
+.touch-diagnostics__active article dl div {
+  min-width: 0;
+  padding: 7px;
+  background: var(--hv-diagnostic-surface);
+}
+
+.touch-diagnostics__active dt {
+  color: var(--hv-diagnostic-muted);
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.touch-diagnostics__active dd {
+  margin: 4px 0 0;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.touch-diagnostics__history {
+  margin-top: 12px;
+}
+
+.touch-diagnostics__table-wrap {
+  max-height: 270px;
+  overflow: auto;
+}
+
+.touch-diagnostics__history table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--hv-diagnostic-text);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.touch-diagnostics__history th,
+.touch-diagnostics__history td {
+  height: 31px;
+  padding: 0 10px;
+  border-right: 1px solid var(--hv-diagnostic-line);
+  border-bottom: 1px solid var(--hv-diagnostic-line);
+}
+
+.touch-diagnostics__history th {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  color: var(--hv-diagnostic-muted);
+  background: var(--hv-diagnostic-raised);
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+.touch-diagnostics__history tbody tr[data-phase='DOWN'] td:nth-child(3) {
+  color: var(--hv-diagnostic-verified);
+}
+
+.touch-diagnostics__history tbody tr[data-phase='CANCELLED'] td:nth-child(3),
+.touch-diagnostics__history tbody tr[data-phase='CAPTURE LOST'] td:nth-child(3) {
+  color: var(--hv-diagnostic-failure);
+}
+
+.touch-diagnostics__history tbody tr:first-child {
+  background: color-mix(in srgb, var(--hv-diagnostic-information), transparent 86%);
+}
+
+.touch-diagnostics__history td[colspan] {
+  height: 74px;
+  color: var(--hv-diagnostic-muted);
+  text-align: center;
+}
+
+.touch-diagnostics__footnote {
+  margin: 0;
+  padding: 9px 12px;
+  color: var(--hv-diagnostic-muted);
+  font-size: 8px;
+  letter-spacing: .06em;
+  line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+  .touch-diagnostics__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .touch-diagnostics__side {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .touch-diagnostics {
+    padding: 12px;
+  }
+
+  .touch-diagnostics__header {
+    display: grid;
+  }
+
+  .touch-diagnostics__header-status {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    min-width: 0;
+    padding: 12px 0 0;
+    border-top: 1px solid var(--hv-diagnostic-line);
+    border-left: 0;
+    text-align: left;
+  }
+
+  .touch-diagnostics__header-status strong {
+    grid-row: 1 / 3;
+    grid-column: 2;
+  }
+
+  .touch-diagnostics__controls {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .touch-diagnostics__controls .touch-diagnostics__exit {
+    margin-left: 0;
+  }
+
+  .touch-diagnostics__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .touch-diagnostics__surface {
+    min-height: 430px;
+  }
+
+  .touch-diagnostics__side {
+    grid-template-columns: 1fr;
+  }
+
+  .touch-diagnostics__active article dl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .touch-diagnostics *,
+  .touch-diagnostics *::before,
+  .touch-diagnostics *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+    animation-duration: .001ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .touch-diagnostics__target,
+  .touch-diagnostics__pointer,
+  .touch-diagnostics__controls button {
+    forced-color-adjust: auto;
+  }
+}
